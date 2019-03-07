@@ -7,23 +7,29 @@ namespace C073084_Satinder_CSD3354_1_MARCH_6
 //March 7,2019
 //Csd3354-1
 {
-    public class Program
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DelegateExercises delegateExercises = new DelegateExercises();
+
+            delegateExercises.Method2();
+        }
+    }
+
+
+    public class DelegateExercises
     {
         public delegate void MyDelegate();
-
-        public void Method1()
+        void Method1()
         {
             Console.WriteLine("Method1");
             Console.ReadLine();
         }
         public void Method2()
         {
-            MyDelegate mydelegate = new MyDelegate(Method1);
-            mydelegate();
-        }
-        static void Main(string[] args)
-        {
-
+            MyDelegate myDelegate = new MyDelegate(Method1);
+            myDelegate();
         }
     }
 }
